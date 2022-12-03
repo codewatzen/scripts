@@ -1,5 +1,5 @@
 #!/bin/bash
-# A script I created back when learning cmd, I updated that script to powershell and now updated the script to bash. 
+# A script I created back when learning cmd, I updated that script to powershell and now updated the script to bash.
 dir=~/Downloads/
 for filename in ~/Downloads/*; do
     base=${filename%.*}

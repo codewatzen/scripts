@@ -11,7 +11,7 @@ echo "*......"
 echo "**....."
 echo "*****.."
 echo "*******"
-numRan=$(($RANDOM % 15))
-richAge=$(($numRan + $age))
-ageDif=$(($richAge - $age))
+numRan=$((RANDOM % 15))
+richAge=$((numRan + age))
+ageDif=$((richAge - age))
 echo "$name, you will be a millionaire at the age of $richAge. That is $ageDif years away."
