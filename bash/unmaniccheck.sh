@@ -1,10 +1,10 @@
 #!/bin/bash
 check="hevc"
-x265="/mnt/omnitrix/unmanic/compressed/x265"
-dir="/mnt/omnitrix/unmanic/compressed/"
-dir1="/mnt/omnitrix/unmanic/omni_unmanic/"
-dir2="/mnt/omnitrix/unmanic/mxl_unmanic/"
-dir3="/mnt/omnitrix/unmanic/old_files"
+x265="/mnt/nas/unmanic/compressed/x265"
+dir="/mnt/nas/unmanic/compressed/"
+dir1="/mnt/nas/unmanic/omni_unmanic/"
+dir2="/mnt/nas/unmanic/mxl_unmanic/"
+dir3="/mnt/nas/unmanic/old_files"
 # Function called x265_folder that checks if $x265 path exists and if it doesn't it creates it
 x265_folder() {
     if [ ! -d "${x265}" ]; then
