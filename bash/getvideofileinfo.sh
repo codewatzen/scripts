@@ -3,7 +3,6 @@
 videodirs="<directorie of files>"
 csv="<location of csv>"
 echo "Size (GB);File Name;Resolution;Codec" >"${csv}"
-
 fdfind -t f -E "*.gz" -E "*.srt" -E "*.sub" . ${videodirs} \
     -x ffprobe -v quiet -print_format json -show_format -select_streams v:0 \
     -show_entries stream \
