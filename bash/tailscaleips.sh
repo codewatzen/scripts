@@ -13,7 +13,7 @@ for ip in $tailscalemachines; do
   }
 done
 
-grep -v '^ *#' <"$ipsallowed" | while IFS= read -r line; do
+grep -v '^ *#' < "$ipsallowed" | while IFS= read -r line; do
   sudo ufw allow from "$line"
 done
 sudo ufw reload >/dev/null
