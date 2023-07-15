@@ -29,15 +29,15 @@ search_directory() {
 
 # Runs x265_folder function and starts the For loop parsing out files from $dir
 x265_folder
-for file in "$dir"*; do
+for file in "$dir"/*; do
     # Takes the $file variable and extracts just the name and puts it in the $movie variable
     movie=$(basename "${file% (*}")
     # Starts the If statement check if $file is a file
-    if [[ -f "$file" ]]; then
+    if [ -f "$file" ]; then
         # Creates variable $codec that contains ffprobe output of the codec_name from $file
         codec=$(ffprobe -hide_banner -v error -select_streams v:0 -show_entries stream=codec_name "$file")
         # Starts another If statement checking if $codec equals $check hevc = hevc
-        if [[ "$codec" == *"$check"* ]]; then
+        if echo "$codec" | grep -q "$check"; then
             # If the check is correct, it echoes that the $movie was converted, moves $file to $x265
             # then runs both search_directory functions to move the files from $dir1 and $dir2 to $dir3
             echo "$movie was converted successfully, moving to x265 folder"
